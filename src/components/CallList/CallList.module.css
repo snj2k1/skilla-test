@@ -1,0 +1,23 @@
+.table{
+  width: 100%;
+  margin-top: 30px;
+}
+.table > thead > tr > th{
+  color: rgba(137, 156, 177, 1);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+}
+.table > tbody > tr{
+  height: 65px;
+}
+.table > tbody > tr > th{
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 21px;
+  text-align: center;
+  color: rgba(18, 41, 69, 1);
+}
+.table label span{
+  border-color: rgba(137, 156, 177, 1) !important;
+}

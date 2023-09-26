@@ -1,0 +1,20 @@
+.datePicker{
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 10px;
+}
+.datePicker > button{
+  border: none;
+  cursor: pointer;
+}
+.datePicker > span{
+  color: rgba(0, 95, 248, 1);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  background-image: url(../../img/icon-calendar.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-left: 20px;
+}

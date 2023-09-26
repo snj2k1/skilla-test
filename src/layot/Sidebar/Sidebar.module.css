@@ -1,0 +1,38 @@
+aside{
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: #091336;
+}
+.logo{
+  display: inline-block;
+  margin: 20px 12px;
+}
+.buttons{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+aside button{
+  height: 52px;
+  margin: 0 12px;
+  color: white;
+  font-weight: 500;
+  font-size: 16px;
+  background-color: rgba(0, 95, 248, 1);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn_add{
+  background-image: url(../../img/btn-add-icon.svg);
+}
+.btn_pay{
+  background-image: url(../../img/btn-pay-icon.svg);
+}
+.btn_add,
+.btn_pay{
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: calc(100% - 12px);
+}

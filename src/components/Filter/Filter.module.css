@@ -1,0 +1,9 @@
+.filter{
+  display: flex;
+  justify-content: right;
+  margin-top: 30px;
+  height: 48px;
+}
+.filter span{
+  color: rgba(94, 119, 147, 1);
+}
