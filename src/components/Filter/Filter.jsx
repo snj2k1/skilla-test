@@ -1,9 +1,13 @@
 import { Select } from "antd";
 import styles from "./Filter.module.css";
+import { useDispatch } from "react-redux";
+import { setInOut } from "../../features/filters/filters-slice";
 
 const Filter = () => {
+  const dispatch = useDispatch();
+
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
+    dispatch(setInOut(value));
   };
 
   return (

@@ -4,17 +4,12 @@
   align-items: center;
   gap: 10px;
 }
-.datePicker > button{
-  border: none;
-  cursor: pointer;
+.datePicker > div{
+  border-color: rgba(137, 156, 177, 1);
 }
-.datePicker > span{
-  color: rgba(0, 95, 248, 1);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 16px;
-  background-image: url(../../img/icon-calendar.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  padding-left: 20px;
+.datePicker span{
+  color: rgba(137, 156, 177, 1);
+}
+.datePicker input::placeholder{
+  color: rgba(137, 156, 177, 1) !important;
 }

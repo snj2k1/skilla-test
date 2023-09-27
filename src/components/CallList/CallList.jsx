@@ -6,6 +6,9 @@ import { LoadingOutlined } from "@ant-design/icons";
 import Call1 from "../../img/call1.svg";
 import Call0 from "../../img/call0.svg";
 import styles from "./CallList.module.css";
+import { useDispatch } from "react-redux";
+import { setSortBy } from "../../features/filters/filters-slice";
+import { GetRecord } from "../GetRecord/GetRecord";
 
 const antIcon = (
   <LoadingOutlined style={{ fontSize: 48, color: "white" }} spin />
@@ -13,6 +16,7 @@ const antIcon = (
 
 const CallList = () => {
   const [calls, { error, status }] = useCalls();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -31,12 +35,22 @@ const CallList = () => {
                 <Checkbox />
               </th>
               <th>Тип</th>
-              <th>Время</th>
+              <th
+                onClick={() => dispatch(setSortBy("date"))}
+                style={{ cursor: "pointer" }}
+              >
+                Время
+              </th>
               <th>Сотрудник</th>
               <th>Звонок</th>
               <th>Источник</th>
               <th>Статус</th>
-              <th>Длительность</th>
+              <th
+                onClick={() => dispatch(setSortBy("duration"))}
+                style={{ cursor: "pointer" }}
+              >
+                Длительность
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -91,8 +105,17 @@ const CallList = () => {
                       </span>
                     )}
                   </th>
-                  <th style={{ textAlign: "right" }}>
+                  <th
+                    style={{
+                      width: "350px",
+                      height: "65px",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "right",
+                    }}
+                  >
                     {new Date(el.time * 1000).toISOString().slice(14, 19)}
+                    {el.record && <GetRecord record={el.record} />}
                   </th>
                 </tr>
               );

@@ -1,27 +1,23 @@
-import { useState } from "react";
-import Left from "../../img/keyboard_arrow_left.svg";
-import Right from "../../img/keyboard_arrow_right.svg";
+import { useDispatch } from "react-redux";
 import styles from "./DateChanger.module.css";
+import { DatePicker } from "antd";
+import { clearDate, setDate } from "../../features/filters/filters-slice";
+const { RangePicker } = DatePicker;
 
 const DateChanger = () => {
-  const [days, setDays] = useState(1);
+  const dispatch = useDispatch();
+
+  const handleChange = (data) => {
+    if (!data[0] && !data[1]) {
+      dispatch(clearDate());
+    } else {
+      dispatch(setDate(data));
+    }
+  };
+
   return (
     <div className={styles.datePicker}>
-      <button onClick={() => (days !== 1 ? setDays(days - 1) : 1)}>
-        <img src={Left} alt="left-arrow" />
-      </button>
-      <span>
-        {days +
-          " " +
-          (days === 1
-            ? "день"
-            : days === 2 || days === 3 || days === 4
-            ? "дня"
-            : "дней")}
-      </span>
-      <button onClick={() => setDays(days + 1)}>
-        <img src={Right} alt="right-arrow" />
-      </button>
+      <RangePicker onChange={(_, dateString) => handleChange(dateString)} />
     </div>
   );
 };

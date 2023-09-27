@@ -4,8 +4,9 @@ export const fetchCalls = createAsyncThunk(
   "@@calls/fetchCalls",
   async (filters, { extra: { client, api } }) => {
     const data = await client
-      .post(api.CALLS_URL, filters, {
+      .post(api.CALLS_URL, null, {
         ...api.CALLS_OPTIONS,
+        params: { ...filters },
       })
       .then((response) => response.data);
     return data;

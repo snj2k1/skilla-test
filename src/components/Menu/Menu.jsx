@@ -14,7 +14,7 @@ const Menu = () => {
         <NavLink className="nav_list__messages" to="/messages">
           Сообщения
         </NavLink>
-        <NavLink className="nav_list__calls" to="/" exact>
+        <NavLink className="nav_list__calls" to="/">
           Звонки
         </NavLink>
         <NavLink className="nav_list__counterparties" to="/counterparties">
